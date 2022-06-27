@@ -22,7 +22,10 @@ test:
 server:
 	go run main.go
 
+ui-package:
+	cd ui && npm install
+
 ui:
 	npm run --prefix ui start
 
-.PHONY: createdb dropdb migrateup migratedown sqlc test server ui
+.PHONY: createdb dropdb migrateup migratedown sqlc test server ui-package ui

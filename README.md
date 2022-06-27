@@ -40,6 +40,12 @@
     make migratedown
     ```
 
+- Install UI dependencies:
+
+    ```bash
+    make ui-package
+    ```
+
 
 ### How to generate code
 
