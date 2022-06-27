@@ -33,7 +33,8 @@ func TestGetUser(t *testing.T) {
 }
 
 func CreateUser(t *testing.T) User {
-	hasedPassword := "secret"
+	hasedPassword, err := util.HashPassword(util.RandomString(6))
+	require.NoError(t, err)
 
 	permission := make([]string, 1)
 	permission[0] = util.Vote

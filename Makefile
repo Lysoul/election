@@ -19,4 +19,10 @@ mock:
 test:
 	go test -v -cover ./...
 
-.PHONY: createdb dropdb migrateup migratedown sqlc test
+server:
+	go run main.go
+
+ui:
+	npm run --prefix ui start
+
+.PHONY: createdb dropdb migrateup migratedown sqlc test server ui
