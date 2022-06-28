@@ -55,8 +55,8 @@ func RandomBioLink() string {
 //RandomLink generate a random image link
 func RandomImageLink() string {
 	imagesLinks := []string{
-		"https://upload.wikimedia.org/wikipedia/commons/e/ed/Elon_Musk_Royal_Society.jpg",
-		"https://pbs.twimg.com/profile_images/669103856106668033/UF3cgUk4_400x400.jpg"}
+		"https://img.freepik.com/free-photo/portrait-serious-smiling-modern-indian-man-near-office-building_496169-2890.jpg?w=2000",
+		"https://media.istockphoto.com/photos/portrait-of-young-businessman-standing-in-his-office-with-arms-picture-id1193290387?k=20&m=1193290387&s=612x612&w=0&h=g_94MYUcCXg_gHy0enwpezhZoIUjfClKTmm_HKeSlLU="}
 	n := len(imagesLinks)
 	return imagesLinks[rand.Intn(n)]
 }

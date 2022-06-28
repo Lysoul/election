@@ -2,16 +2,22 @@
 
 ### Install tools
 
+- [Golang](https://go.dev/)
+
+- [PostgresSQL](https://www.postgresql.org/)
+
+- [Angular-Cli](https://angular.io/cli)
+
 - [Migrate](https://github.com/golang-migrate/migrate/tree/master/cmd/migrate)
 
     ```bash
-    brew install golang-migrate
+    scoop install migrate
     ```
 
 - [Sqlc](https://github.com/kyleconroy/sqlc#installation)
 
     ```bash
-    brew install sqlc
+    go install github.com/kyleconroy/sqlc/cmd/sqlc@latest
     ```
 
 - [Gomock](https://github.com/golang/mock)
@@ -20,7 +26,7 @@
     go install github.com/golang/mock/mockgen@v1.6.0
     ```
 
-### Setup infrastructure
+### Setup infrastructure (Windows)
 
 - Create election database:
 
