@@ -179,7 +179,7 @@ SELECT
   CONCAT(percentage, '%')::text as percentage,
   create_at
  FROM candidates
-ORDER BY percentage DESC
+ORDER BY vote_count DESC
 `
 
 type ListCandidatesResultRow struct {

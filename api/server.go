@@ -48,9 +48,10 @@ func (server *Server) setupRouter() {
 
 	router.POST("/users", server.createUser)
 	router.POST("/users/login", server.loginUser)
+	router.GET("/election/result", server.electionResult)
+	router.HEAD("/election/export", server.exportCSVElectionResult)
 
 	authRoutes := router.Group("/api").Use(authMiddleware(server.tokenMaker))
-	authRoutes.Use(cors.AllowAll())
 
 	authRoutes.POST("/candidates", server.createCandidate)
 	authRoutes.GET("/candidates/:id", server.getCandidate)
@@ -62,8 +63,6 @@ func (server *Server) setupRouter() {
 	authRoutes.POST("/vote/status", server.checkVoteStatus)
 
 	authRoutes.POST("/election/toggle", server.toggleElection)
-	authRoutes.GET("/election/result", server.electionResult)
-	authRoutes.GET("/election/export", server.exportCSVElectionResult)
 
 	server.router = router
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { from, Observable } from 'rxjs';
-import { Candidate } from '../models/candidate';
-import { VoteService } from '../services/vote.service';
+import { Candidate } from '../../models/candidate';
+import { VoteService } from '../../services/vote.service';
 
 @Component({
   selector: 'app-vote',

@@ -2,7 +2,7 @@
   <ngx-charts-bar-vertical
     [view]="view"
     [scheme]="colorScheme"
-    [results]="single"
+    [results]="electionResult | async"
     [gradient]="gradient"
     [xAxis]="showXAxis"
     [yAxis]="showYAxis"

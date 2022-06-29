@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Candidate } from '../models/candidate';
-import { Observable, take } from 'rxjs';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { ElectionResult } from '../models/election-result';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,6 +22,14 @@ export class VoteService {
 
   voteStatus(nationalId: string){
     return this.httpClient.post(environment.baseUrl +"/api/vote/status", { nationalId: nationalId});
+  }
+
+  electionResult(){
+    return this.httpClient.get<ElectionResult[]>(environment.baseUrl +"/election/result");
+  }
+
+  electionExport(){
+    return this.httpClient.head<Blob>(environment.baseUrl +"election/export");
   }
 
 

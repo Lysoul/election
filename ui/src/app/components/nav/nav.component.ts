@@ -1,9 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { map, Observable, of,tap } from 'rxjs';
-import { DefaultUser, User } from '../models/user';
-import { AuthService } from '../services/auth.service';
-import { UserService } from '../services/user.service';
+import { Component, OnInit } from '@angular/core';
+import { map, Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { AuthService } from '../../services/auth.service';
+import { UserService } from '../../services/user.service';
+import { VoteService } from '../../services/vote.service';
 
 @Component({
   selector: 'app-nav',
@@ -12,11 +12,12 @@ import { UserService } from '../services/user.service';
 })
 export class NavComponent implements OnInit {
 
-  constructor(private authService: AuthService, private userService: UserService) { }
+  constructor(private authService: AuthService, 
+    private userService: UserService,
+    ) { }
 
   fullName: Observable<string> = of("Anonymous");
   hasLogedIn: Observable<boolean> = of(false);
-
 
   ngOnInit(): void {
     this.fullName = this.userService.getUser().pipe(map(x => x.full_name));

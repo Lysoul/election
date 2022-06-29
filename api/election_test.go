@@ -193,7 +193,7 @@ func TestGetElectionResultAPI(t *testing.T) {
 			server := newTestServer(t, store)
 			recorder := httptest.NewRecorder()
 
-			url := fmt.Sprintf("/api/election/result")
+			url := fmt.Sprintf("/election/result")
 			request, err := http.NewRequest(http.MethodGet, url, nil)
 			require.NoError(t, err)
 
@@ -273,7 +273,7 @@ func TestExportCSVElectionResultAPI(t *testing.T) {
 			server := newTestServer(t, store)
 			recorder := httptest.NewRecorder()
 
-			url := fmt.Sprintf("/api/election/export")
+			url := fmt.Sprintf("/election/export")
 			request, err := http.NewRequest(http.MethodGet, url, nil)
 			require.NoError(t, err)
 

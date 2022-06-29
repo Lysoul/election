@@ -3,13 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
-import { FooterComponent } from './footer/footer.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { VoteComponent } from './vote/vote.component';
-import { VoteCardComponent } from './vote-card/vote-card.component';
+import { NavComponent } from './components/nav/nav.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { VoteComponent } from './components/vote/vote.component';
+import { VoteCardComponent } from './components/vote-card/vote-card.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -22,7 +21,6 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   declarations: [
     AppComponent,
     NavComponent,
-    FooterComponent,
     DashboardComponent,
     VoteComponent,
     VoteCardComponent,
